@@ -1,0 +1,10 @@
+Started GET "/" for 127.0.0.1 at 2022-06-17 08:40:35 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 830)
+  Rendered layout layouts/application.html.erb (Duration: 155.0ms | Allocations: 92971)
+Completed 200 OK in 177ms (Views: 161.9ms | ActiveRecord: 0.0ms | Allocations: 100011)
+
+
