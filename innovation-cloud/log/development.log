@@ -290,3 +290,79 @@ Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1
 NoMethodError (undefined method `save' for nil:NilClass):
   
 app/controllers/signups_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2022-06-17 11:38:12 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SignupsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering signups/new.html.erb within layouts/application
+  Rendered signups/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2363)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 2468)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 7074)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    34:     <p>Receive weekly insights from industry insiders.</p>
+    35:     
+    36:     
+    37:     <%= form_for(@signup) do |f|%>
+    38:     <%= f.text_field :email, :placeholder => "Email"%>
+    39:     <%= f.submit "Join", :class => "btn"%>
+    40:     <% end %>
+  
+app/views/signups/new.html.erb:37
+Started GET "/" for 127.0.0.1 at 2022-06-17 11:38:27 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SignupsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering signups/new.html.erb within layouts/application
+  Rendered signups/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2011)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 36766)
+Completed 200 OK in 56ms (Views: 40.5ms | ActiveRecord: 0.4ms | Allocations: 47574)
+
+
+Started POST "/signups" for 127.0.0.1 at 2022-06-17 11:38:34 +0100
+Processing by SignupsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "signup"=>{"email"=>"hello"}, "commit"=>"Join"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1428)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/signups_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2022-06-17 11:53:34 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SignupsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering signups/new.html.erb within layouts/application
+  Rendered signups/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2007)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 36626)
+Completed 200 OK in 84ms (Views: 65.8ms | ActiveRecord: 0.4ms | Allocations: 47432)
+
+
+Started POST "/signups" for 127.0.0.1 at 2022-06-17 11:53:41 +0100
+Processing by SignupsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "signup"=>{"email"=>"lukeczoboriek@hotmail.co.uk"}, "commit"=>"Join"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:8:in `create'
+  [1m[36mSignup Create (0.2ms)[0m  [1m[32mINSERT INTO "signups" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "lukeczoboriek@hotmail.co.uk"], ["created_at", "2022-06-17 10:53:41.280573"], ["updated_at", "2022-06-17 10:53:41.280573"]]
+  ↳ app/controllers/signups_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signups_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:4001/thanks
+Completed 302 Found in 7ms (ActiveRecord: 3.9ms | Allocations: 3548)
+
+
+Started GET "/thanks" for 127.0.0.1 at 2022-06-17 11:53:41 +0100
+Processing by PagesController#thanks as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/thanks.html.erb within layouts/application
+  Rendered pages/thanks.html.erb within layouts/application (Duration: 0.7ms | Allocations: 157)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2863)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3936)
+
+

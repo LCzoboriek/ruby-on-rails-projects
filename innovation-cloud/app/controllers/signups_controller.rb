@@ -4,7 +4,7 @@ class SignupsController < ApplicationController
     end
 
     def create
-        @singup = Signup.new(signup_params)
+        @signup = Signup.new(signup_params)
         if @signup.save
             redirect_to thanks_url
         else
