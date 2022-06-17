@@ -34,8 +34,10 @@
     <p>Receive weekly insights from industry insiders.</p>
     
     
-    <!-- Your code here -->
-    
+    <%= form_for(@signup) do |f|%>
+    <%= f.text_field :email, :placeholder => "Email"%>
+    <%= f.submit "Join", :class => "btn"%>
+    <% end %>
 
   </div>
 </div>

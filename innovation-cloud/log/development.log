@@ -16,3 +16,14 @@ Migrating to CreateSignups (20220617090134)
   [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-06-17 10:26:53 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SignupsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering signups/new.html.erb within layouts/application
+  Rendered signups/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2161)
+  Rendered layout layouts/application.html.erb (Duration: 145.5ms | Allocations: 92865)
+Completed 200 OK in 160ms (Views: 148.9ms | ActiveRecord: 0.4ms | Allocations: 104878)
+
+

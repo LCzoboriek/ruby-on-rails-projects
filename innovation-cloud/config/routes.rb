@@ -3,4 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get '/thanks' => 'pages#thanks'
+
+  
+  resources :signups
+
+  root 'signups#new'
 end
+
